@@ -10,9 +10,9 @@ function App() {
     <>
       <Routes>
         <Route path="Book-shop/" element={<SignIn />} />
-        <Route path="Book-shop/booklist" element={<BookList />} />
-        <Route path="Book-shop/cart" element={<Cart/>} />
-        <Route path="Book-shop/specificbook" element={<SpecificBook />} />
+        <Route path="booklist" element={<BookList />} />
+        <Route path="cart" element={<Cart/>} />
+        <Route path="specificbook" element={<SpecificBook />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>
