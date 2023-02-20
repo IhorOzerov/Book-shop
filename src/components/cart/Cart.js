@@ -3,11 +3,10 @@ import Header from '../header/Header';
 import Footer from "../footer/Footer";
 import cart from './img/cart.svg'
 import CartBook from "./CartBook";
-import {useState, useEffect} from 'react'
 
 export default function Cart() {
     if (!localStorage.username) {
-        document.location = "/"
+        document.location = "book-shop/"
     }
 
     let cartContent;

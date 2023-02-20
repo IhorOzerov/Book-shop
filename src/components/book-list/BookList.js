@@ -14,7 +14,7 @@ export default function BookList() {
     let [sortedBooks, setSort] = useState(responseData)
 
     if (!localStorage.username) {
-        document.location = "/"
+        document.location = "book-shop/"
     }
 
         
