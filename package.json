@@ -1,6 +1,6 @@
 {
-  "name": "x-course-task",
-  "homepage": "https://ihorozerov.github.io/Book-shop",
+  "name": "book-shop",
+  "homepage": "https://ihorozerov.github.io/book-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
