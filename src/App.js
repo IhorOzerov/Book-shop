@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/prometheus-x-course-task/" element={<SignIn />} />
-        <Route path="/booklist" element={<BookList />} />
-        <Route path="/cart" element={<Cart/>} />
-        <Route path="/specificbook" element={<SpecificBook />} />
+        <Route path="prometheus-x-course-task/" element={<SignIn />} />
+        <Route path="booklist" element={<BookList />} />
+        <Route path="cart" element={<Cart/>} />
+        <Route path="specificbook" element={<SpecificBook />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>
