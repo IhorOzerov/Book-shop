@@ -1,6 +1,6 @@
 {
-  "name": "book-shop",
-  "homepage": "https://ihorozerov.github.io/book-shop",
+  "name": "prometheus-x-course-task",
+  "homepage": "https://ihorozerov.github.io/prometheus-x-course-task",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
