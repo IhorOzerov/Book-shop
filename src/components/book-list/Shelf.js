@@ -5,7 +5,7 @@ export default function Shelf(props) {
     const shelf = props.book.map((el) => (
         
         <div id={el.id} className = "book" key = { el.id } >
-            <img src={el.image == "" ? notFound : el.image} alt="myFace" />
+            <img src={el.image === "" ? notFound : el.image} alt="myFace" />
             <p className="book-text"><b>Book name: </b>{el.title.length >= 24 ? (el.title.slice(0, 24) + "...") : el.title}</p>
             <p className="book-text"><b>Book author: </b>{el.author}</p>
             <div className="book-price">
