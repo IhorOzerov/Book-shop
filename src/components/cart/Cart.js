@@ -6,7 +6,7 @@ import CartBook from "./CartBook";
 
 export default function Cart() {
     if (!localStorage.username) {
-        document.location = "book-shop/"
+        document.location = "prometheus-x-course-task/"
     }
 
     let cartContent;

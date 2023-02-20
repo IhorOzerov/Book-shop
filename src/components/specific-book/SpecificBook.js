@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function SpecificBook() {
     if (!localStorage.username) {
-        document.location = "/"
+        document.location = "prometheus-x-course-task/"
     }
 
     let { author, price, image, title, description, id } = JSON.parse(localStorage.specificBook)
