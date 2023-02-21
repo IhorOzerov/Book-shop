@@ -19,7 +19,7 @@ export default function CartBook(props) {
     function cleanStorage() {
         localStorage.removeItem("bookToCart");
         singleBook = ""
-        document.location = '/cart'
+        document.location = 'https://ihorozerov.github.io/cart'
     }
     
     return (
@@ -28,7 +28,5 @@ export default function CartBook(props) {
             {singleBook}
             <p id="total">{'Total price,$ '} {totalPrice}</p>           
         </div>
-        
-    
     )
 }
