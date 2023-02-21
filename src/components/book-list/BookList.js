@@ -15,8 +15,11 @@ export default function BookList() {
     const [select, setSelect] = useState('default')
     let [sortedBooks, setSort] = useState(responseData)
 
-    
 
+    if (!localStorage.username) {
+        navigate("/prometheus-x-course-task");
+    }
+    
     function findBook() {
         sortedBooks = [...responseData];
 
@@ -43,12 +46,6 @@ export default function BookList() {
     useEffect(() => {
         findBook();
     }, [input, select])
-
-    useEffect(() => {
-        if (!localStorage.username) {
-            navigate("/prometheus-x-course-task");
-        }
-    }, [])
     
     return (
         <>
