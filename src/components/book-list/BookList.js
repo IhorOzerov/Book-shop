@@ -16,7 +16,7 @@ export default function BookList() {
     let [sortedBooks, setSort] = useState(responseData)
 
     if (!localStorage.username) {
-        navigate("/prometheus-x-course-task/")
+        navigate("/prometheus-x-course-task/");
     }
 
         
