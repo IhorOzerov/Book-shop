@@ -3,9 +3,11 @@ import data from "./books.json";
 import Footer from "../footer/Footer";
 import Header from '../header/Header';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 import Shelf from './Shelf';
 
 export default function BookList() {
+    const navigate = useNavigate();
     const responseData = []
     responseData.push(...data.books);
 
@@ -14,7 +16,7 @@ export default function BookList() {
     let [sortedBooks, setSort] = useState(responseData)
 
     if (!localStorage.username) {
-        document.location = "/prometheus-x-course-task"
+        navigate("/prometheus-x-course-task/")
     }
 
         
