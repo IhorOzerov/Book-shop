@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function SpecificBook() {
     if (!localStorage.username) {
-        document.location = "prometheus-x-course-task/"
+        document.location = "/prometheus-x-course-task"
     }
 
     let { author, price, image, title, description, id } = JSON.parse(localStorage.specificBook)
@@ -72,7 +72,7 @@ let book = <section className="book-page">
                 <span>Total price </span>
                 <span id="totalPrice">{totalBooklPrice}</span>
         </div>
-        <Link to="prometheus-x-course-task/cart"><button onClick={addedBooks} className="price-block-btn" type="submit">Add to cart</button></Link>
+        <Link to="/prometheus-x-course-task/cart"><button onClick={addedBooks} className="price-block-btn" type="submit">Add to cart</button></Link>
             
         </section>
     </section>
