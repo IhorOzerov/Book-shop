@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/booklist" element={<BookList />} />
-        <Route path="prometheus-x-course-task/cart" element={<Cart/>} />
-        <Route path="prometheus-x-course-task/specificbook" element={<SpecificBook />} />
+        <Route path="/cart" element={<Cart/>} />
+        <Route path="/specificbook" element={<SpecificBook />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>

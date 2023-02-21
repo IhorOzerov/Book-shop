@@ -10,7 +10,7 @@ export default function Shelf(props) {
             <p className="book-text"><b>Book author: </b>{el.author}</p>
             <div className="book-price">
                 <p className="book-text"><b>Price, $</b> {el.price}</p>
-                <Link to="/prometheus-x-course-task/specificbook"><button onClick={(e)=>bookInfo(e)} className="view-btn">View</button></Link>
+                <Link to="/specificbook"><button onClick={(e)=>bookInfo(e)} className="view-btn">View</button></Link>
             </div>
         </div>
     ))
