@@ -3,7 +3,7 @@ import data from "./books.json";
 import Footer from "../footer/Footer";
 import Header from '../header/Header';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, redirect } from 'react-router-dom'
 import Shelf from './Shelf';
 
 export default function BookList() {
@@ -17,7 +17,7 @@ export default function BookList() {
 
 
     if (!localStorage.username) {
-        navigate("/prometheus-x-course-task");
+        redirect("/");
     }
     
     function findBook() {
