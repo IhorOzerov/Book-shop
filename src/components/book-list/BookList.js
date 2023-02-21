@@ -15,16 +15,9 @@ export default function BookList() {
     const [select, setSelect] = useState('default')
     let [sortedBooks, setSort] = useState(responseData)
 
-    if (!localStorage.username) {
-        navigate("/prometheus-x-course-task");
-    }
-
-        
-    useEffect(() => {
-        findBook();
-    }, [input, select])
     
-    function findBook () {
+
+    function findBook() {
         sortedBooks = [...responseData];
 
         sortedBooks = sortedBooks.filter(el => el.title
@@ -35,18 +28,28 @@ export default function BookList() {
         
         if (select === "lowPrice") {
             setSort(sortedBooks.filter(el => el.price <= 15)
-                                    .sort((a, b) => a.price - b.price));
+                .sort((a, b) => a.price - b.price));
         } else if (select === "midPrice") {
             setSort(sortedBooks.filter(el => el.price > 15 && el.price <= 30)
-                                    .sort((a, b) => a.price - b.price));
+                .sort((a, b) => a.price - b.price));
         } else if (select === "highPrice") {
             setSort(sortedBooks.filter(el => el.price > 30)
-                                    .sort((a,b)=> a.price-b.price));
+                .sort((a, b) => a.price - b.price));
         } else {
             setSort(sortedBooks)
         }
     }
 
+    useEffect(() => {
+        findBook();
+    }, [input, select])
+
+    useEffect(() => {
+        if (!localStorage.username) {
+            navigate("/prometheus-x-course-task");
+        }
+    }, [])
+    
     return (
         <>
             <section className="header">
