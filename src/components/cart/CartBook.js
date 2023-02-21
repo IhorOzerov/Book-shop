@@ -19,7 +19,7 @@ export default function CartBook(props) {
     function cleanStorage() {
         localStorage.removeItem("bookToCart");
         singleBook = ""
-        document.location = 'https://ihorozerov.github.io/cart'
+        document.location = 'https://ihorozerov.github.io/prometheus-x-course-task/cart'
     }
     
     return (

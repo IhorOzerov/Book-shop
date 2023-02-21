@@ -72,7 +72,7 @@ let book = <section className="book-page">
                 <span>Total price </span>
                 <span id="totalPrice">{totalBooklPrice}</span>
         </div>
-        <Link to="/cart"><button onClick={addedBooks} className="price-block-btn" type="submit">Add to cart</button></Link>
+        <Link to="prometheus-x-course-task/cart"><button onClick={addedBooks} className="price-block-btn" type="submit">Add to cart</button></Link>
             
         </section>
     </section>
