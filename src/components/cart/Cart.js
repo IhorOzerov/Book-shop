@@ -3,10 +3,11 @@ import Header from '../header/Header';
 import Footer from "../footer/Footer";
 import cart from './img/cart.svg'
 import CartBook from "./CartBook";
+import { Navigate } from 'react-router-dom'
 
 export default function Cart() {
     if (!localStorage.username) {
-        document.location = "/prometheus-x-course-task"
+        return <Navigate to="/" redirect={true} />
     }
 
     let cartContent;
@@ -28,9 +29,7 @@ export default function Cart() {
             <section className="header">
                 <Header />
             </section>
-            
             {cartContent}
-
             <Footer />
         </>
     )

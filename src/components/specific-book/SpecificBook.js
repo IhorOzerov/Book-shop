@@ -2,14 +2,10 @@ import './specBook.css';
 import Footer from "../footer/Footer";
 import Header from '../header/Header';
 import {useState, useMemo} from 'react'
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 
 export default function SpecificBook() {
-    if (!localStorage.username) {
-        document.location = "/prometheus-x-course-task"
-    }
-
     let { author, price, image, title, description, id } = JSON.parse(localStorage.specificBook)
 
     let booksToCart;
@@ -33,6 +29,10 @@ export default function SpecificBook() {
     let countId = {
         countNew:count,
         id
+    }
+
+    if (!localStorage.username) {
+        return <Navigate to="/" redirect={true} />
     }
 
     localStorage.setItem('specialBook', JSON.stringify(countId))

@@ -3,7 +3,7 @@ import Cart from "./components/cart/Cart";
 import SignIn from "./components/signin/Signin";
 import SpecificBook from "./components/specific-book/SpecificBook";
 import Page404 from "./components/Page404"
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 
 function App() {
   return (
@@ -18,5 +18,4 @@ function App() {
     </>
   );
 }
-
 export default App;

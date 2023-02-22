@@ -3,11 +3,10 @@ import data from "./books.json";
 import Footer from "../footer/Footer";
 import Header from '../header/Header';
 import { useEffect, useState } from 'react';
-import { useNavigate, redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Shelf from './Shelf';
 
 export default function BookList() {
-    const navigate = useNavigate();
     const responseData = []
     responseData.push(...data.books);
 
@@ -15,9 +14,12 @@ export default function BookList() {
     const [select, setSelect] = useState('default')
     let [sortedBooks, setSort] = useState(responseData)
 
+    useEffect(() => {
+        findBook();
+    }, [input, select])
 
     if (!localStorage.username) {
-        redirect("/");
+        return <Navigate to="/" redirect={true} /> 
     }
     
     function findBook() {
@@ -43,10 +45,6 @@ export default function BookList() {
         }
     }
 
-    useEffect(() => {
-        findBook();
-    }, [input, select])
-    
     return (
         <>
             <section className="header">
