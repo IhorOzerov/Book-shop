@@ -1,5 +1,3 @@
-/*!localStorage.username ?<Navigate to='/'/> : */
-
 /**
  * @license React
  * react-dom.production.min.js
