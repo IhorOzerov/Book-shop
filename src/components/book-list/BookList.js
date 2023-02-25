@@ -7,12 +7,14 @@ import { Navigate } from 'react-router-dom'
 import Shelf from './Shelf';
 
 export default function BookList() {
-    const responseData = []
-    responseData.push(...data.books);
+    if (!localStorage.specificBook) {
+        localStorage.setItem('specificBook', JSON.stringify(data.books[0]))
+    }
+    const responseData = [...data.books]
 
     const [input, setInput] = useState('');
     const [select, setSelect] = useState('default')
-    let [sortedBooks, setSort] = useState(responseData)
+    let [sortedBooks, setSort] = useState([...responseData])
 
     useEffect(() => {
         findBook();
@@ -24,7 +26,6 @@ export default function BookList() {
     
     function findBook() {
         sortedBooks = [...responseData];
-
         sortedBooks = sortedBooks.filter(el => el.title
             .toLowerCase()
             .includes(input
@@ -50,7 +51,6 @@ export default function BookList() {
             <section className="header">
                 <Header />
             </section>
-
             <section className="filters">
                 <input onInput={findBook} onChange={e => setInput(e.target.value)}  type="search" id="searchName" placeholder="Search by book name" />
                 <select onChange={findBook} onInput={e => setSelect(e.target.value)} id="sortPrice" autoComplete="off">
@@ -63,6 +63,5 @@ export default function BookList() {
             <Shelf book={sortedBooks} />
             <Footer />
         </>
-    )
-    
+    )   
 }

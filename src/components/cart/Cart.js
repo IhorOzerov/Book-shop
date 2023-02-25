@@ -11,7 +11,6 @@ export default function Cart() {
     }
 
     let cartContent;
-
     if (!localStorage.bookToCart) {        
         cartContent = <div className="main">
             <button className="purchase" disabled>Purchase</button>

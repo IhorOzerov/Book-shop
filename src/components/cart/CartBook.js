@@ -15,7 +15,6 @@ export default function CartBook(props) {
             </div>
         );
     }
-
     singleBook = props.sold.map((el) => (
         <div className="cartBook" key={Number(el.totalBooklPrice)}>
             <p className="cart-text"><b>Book name: </b>{el.title}</p>

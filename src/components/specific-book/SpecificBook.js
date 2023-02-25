@@ -1,46 +1,38 @@
+import React from 'react';
 import './specBook.css';
 import Footer from "../footer/Footer";
 import Header from '../header/Header';
 import {useState, useMemo} from 'react'
 import { Link, Navigate } from "react-router-dom";
 
-
 export default function SpecificBook() {
-    let { author, price, image, title, description, id } = JSON.parse(localStorage.specificBook)
+    let { author, price, image, title, description} = JSON.parse(localStorage.specificBook)
 
-    let booksToCart;
-    let totSamiy
+    let booksInCart;
+    let specificCount
     if (!localStorage.bookToCart) {
-        booksToCart = []
+        booksInCart = []
     } else {
-        booksToCart = JSON.parse(localStorage.bookToCart);
+        booksInCart = JSON.parse(localStorage.bookToCart);
         if (localStorage.bookToCart.includes(title)) {
-            totSamiy = JSON.parse(localStorage.bookToCart).find(el => el.title == title).count
+            specificCount = JSON.parse(localStorage.bookToCart).find(el => el.title == title).count
         }
     }
 
-    const [count, setCount] = useState(!totSamiy ? 1 : totSamiy);
-    
+    const [count, setCount] = useState(!specificCount ? 1 : specificCount);
+
     let totalBooklPrice = useMemo(() => ('$' + price * count).slice(1), [count])
     totalBooklPrice = Number(totalBooklPrice).toFixed(2);
-
-    let total = { count, totalBooklPrice, title, price };
-
-    let countId = {
-        countNew:count,
-        id
-    }
 
     if (!localStorage.username) {
         return <Navigate to="/" redirect={true} />
     }
 
-    localStorage.setItem('specialBook', JSON.stringify(countId))
-
-    booksToCart.push(total);
+    let total = { count, totalBooklPrice, title, price };
+    booksInCart.push(total);
 
     function addedBooks() {
-        localStorage.bookToCart = JSON.stringify(booksToCart)
+        localStorage.bookToCart = JSON.stringify(booksInCart)
     } 
     
 let book = <section className="book-page">
@@ -72,20 +64,16 @@ let book = <section className="book-page">
                 <span>Total price </span>
                 <span id="totalPrice">{totalBooklPrice}</span>
         </div>
-        <Link to="/cart"><button onClick={addedBooks} className="price-block-btn" type="submit">Add to cart</button></Link>
-            
+            <Link to="/cart"><button onClick={addedBooks} className="price-block-btn" type="submit">Add to cart</button></Link>
         </section>
     </section>
     
-
     return (
         <>
             <section className="header">
                 <Header />
             </section>
-            
-                {book}
-            
+            {book}
             <Footer />
         </>
     )
